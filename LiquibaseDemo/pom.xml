@@ -26,12 +26,12 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.hibernate.orm</groupId>
-			<artifactId>hibernate-core</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.liquibase</groupId>
 			<artifactId>liquibase-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate.orm</groupId>
+			<artifactId>hibernate-core</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.liquibase.ext</groupId>
@@ -54,7 +54,6 @@
 			<version>2.0.1.Final</version>
 		</dependency>
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -70,6 +69,7 @@
 					<diffChangeLogFile>
 						${project.basedir}/src/main/resources/db/changelog/changelog-diff.xml
 					</diffChangeLogFile>
+					<outputChangeLogFile>src/main/resources/db/changelog/changelog.xml</outputChangeLogFile>
 					<propertyFile>src/main/resources/application.properties</propertyFile>
 					<logging>debug</logging>
 					<url>jdbc:mysql://127.0.0.1:3306/partdb?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC</url>
